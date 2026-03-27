@@ -1,0 +1,98 @@
+import React from 'react';
+import { Paper, Typography, Box } from '@mui/material';
+
+import {
+  VictoryChart,
+  VictoryBar,
+  VictoryAxis,
+  VictoryTooltip,
+  VictoryVoronoiContainer,
+  VictoryTheme,
+  VictoryLabel
+} from 'victory';
+
+const GraficoBarraTodos = ({ data, title,altura }: { data: { x: Date, y: number }[], title: string,altura:number }) => {
+    const coloresAlternos = ['#3b82f6', '#93c5fd'];
+
+  return (
+
+
+    <Paper elevation={2} sx={{ p: 2, height: '100%' }}>
+      <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 2 }}>
+        {title}
+      </Typography>
+      <Box sx={{ height: altura }}>
+      <VictoryChart
+        theme={VictoryTheme.material}
+        scale={{ x: "time" }}
+        containerComponent={
+        <VictoryVoronoiContainer 
+           
+           />}
+        padding={{ top: 30, bottom: 70, left: 15, right: 0 }}
+        
+        domainPadding={{ x:  0, y: 0 }}  
+          domain={{ 
+            y: [0, Math.max(...data.map(d => d.y)) + 10],
+           }}
+
+
+        height={altura}     
+        width={400}
+        
+      >
+        <VictoryAxis 
+          tickFormat={(t) => {
+            const date = new Date(t);
+            return `${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+          }}
+          tickValues={data.filter((_, i) => i % 1 === 0).map(d => d.x)}
+          style={{
+            tickLabels: { fontSize: 12, padding: 25, angle:-90 }
+          }}
+        />
+        <VictoryAxis dependentAxis />
+        <VictoryBar
+          
+          data={data}
+          labels={({ datum }) => {
+            const date = new Date(datum.x);
+            const diasSemana = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+            const dia = diasSemana[date.getDay()];
+            return `${datum.y} procesos\n${dia}, ${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
+          }}
+          labelComponent={
+            <VictoryTooltip 
+              dy={0} 
+              dx={10} 
+              style={{ fontSize: 13 , color:"blue" }} 
+              flyoutStyle={{ stroke: "none", fill: "yellow" }}
+              pointerLength={0}
+              renderInPortal={true}
+            />
+
+          }
+
+          style={{
+            data: {
+              fill: ({ index }) => coloresAlternos[index % coloresAlternos.length],
+              width: 15
+              },
+            labels: {
+              fontSize: 10,
+              fill: "#000",
+              padding: 4,
+            }
+          }}
+          barRatio={0.8}
+          barWidth={12}
+          cornerRadius={2}
+        />
+      </VictoryChart>
+    </Box>
+    </Paper>
+  );
+};
+
+
+export default GraficoBarraTodos;
