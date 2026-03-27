@@ -277,7 +277,6 @@ const ProcesoTableGeneral: React.FC<ProcesoTableProps> = ({ title, type, lineas,
             rowsPerPage={rowsPerPage}
             onRowsPerPageChange={handleChangeRowsPerPage}
             rowsPerPageOptions={[50, 100]}
-            rowsPerPage={rowsPerPage}
           />
           {exportar && (
             <button
