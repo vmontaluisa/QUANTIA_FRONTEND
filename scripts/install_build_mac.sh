@@ -31,6 +31,6 @@ npm install --legacy-peer-deps
 
 
 echo "Compilando (Vite build)..."
-npm run build
+npm run dev
 
 echo "Listo."
