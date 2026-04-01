@@ -15,7 +15,13 @@ git pull
 
 echo Instalando dependencias...
 npm install --force
+if errorlevel 1 (
+  echo Fallo npm install. Continuando...
+)
 
 echo Iniciando Vite...
 npm run dev -- --host
+if errorlevel 1 (
+  echo Fallo npm run dev.
+)
 endlocal
