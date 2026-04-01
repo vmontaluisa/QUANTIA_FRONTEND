@@ -31,14 +31,14 @@ echo Actualizando repo...
 git pull
 
 echo Instalando dependencias...
-npm install  --legacy-peer-deps
+call npm install --force
 if errorlevel 1 (
   echo Fallo npm install. Continuando...
 )
 
 
 echo Iniciando Vite...
-npm run dev
+call npm run dev
 if errorlevel 1 (
   echo Fallo npm run dev. Continuando...
 )
