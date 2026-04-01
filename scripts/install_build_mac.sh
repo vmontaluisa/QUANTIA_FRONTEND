@@ -27,10 +27,10 @@ echo "Actualizando repo..."
 git pull
 
 echo "Instalando dependencias..."
-npm install --legacy-peer-deps
+npm install --force || echo "Fallo npm install. Continuando..."
 
 
-echo "Compilando (Vite build)..."
-npm run dev
+echo "Iniciando Vite..."
+npm run dev || echo "Fallo npm run dev. Continuando..."
 
 echo "Listo."

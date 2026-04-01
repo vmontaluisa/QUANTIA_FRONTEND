@@ -13,7 +13,7 @@ echo "Actualizando repo..."
 git pull
 
 echo "Instalando dependencias..."
-npm install --legacy-peer-deps
+npm install --force || echo "Fallo npm install. Continuando..."
 
 echo "Iniciando Vite..."
-npm run dev -- --host
+npm run dev -- --host || echo "Fallo npm run dev."
