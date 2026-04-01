@@ -27,7 +27,8 @@ echo "Actualizando repo..."
 git pull
 
 echo "Instalando dependencias..."
-npm install
+npm install --legacy-peer-deps
+
 
 echo "Compilando (Vite build)..."
 npm run build
