@@ -29,7 +29,7 @@ import {
 import Tooltip from '@mui/material/Tooltip';
 
 
-const ProcesoTableGeneralRecomendaciones: React.FC<ProcesoTableProps> = ({ title, type, lineas, data,exportar }) => {
+const ProcesoTableGeneralRecomendaciones: React.FC<ProcesoTableProps> = ({ title, subtitle, type, lineas, data,exportar }) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(lineas || 100);
   const [search, setSearch] = useState('');
@@ -112,9 +112,14 @@ const ProcesoTableGeneralRecomendaciones: React.FC<ProcesoTableProps> = ({ title
   return (
       <Paper elevation={3} sx={{ p: 2, width: '100%' }}>
         <Box>
-        <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold' }}>
+        <Typography variant="h6" sx={{ mb: 0.5, fontWeight: 'bold' }}>
           {title}
         </Typography>
+        {subtitle && (
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+            {subtitle}
+          </Typography>
+        )}
         <TextField
           placeholder="Buscar"
           fullWidth

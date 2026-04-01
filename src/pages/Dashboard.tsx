@@ -189,28 +189,58 @@ const Dashboard = () => {
 
 
           <Box mb={4}>
-            <ProcesoTableGeneralRecomendaciones title={`1.- Procesos Recomendados AI que cumplen al menos un CPC en su ubicación de interés `} type="cpc" lineas={100} data={procesosRecomendados}   exportar={true}  />
-            Procesos relevantes, ya que cumplen con criterios de negocio y ubicación
+            <ProcesoTableGeneralRecomendaciones
+              title={`1.- Procesos Recomendados AI que cumplen al menos un CPC en su ubicación de interés `}
+              subtitle="Procesos relevantes, ya que cumplen con criterios de negocio y ubicación"
+              type="cpc"
+              lineas={100}
+              data={procesosRecomendados}
+              exportar={true}
+            />
           </Box>
 
 
           <Box mb={4}>
-            <ProcesoTableGeneral title={`2.- Procesos por vencer en los próximos ${indicadores.VENTANA_DIAS_PRESENTACION_ALERTAS} días`} type="cpc" lineas={100} data={procesosVencer}   exportar={true}  />
-            Procesos que requieren acción inmediata ya que están por vencer (tomar en cuenta ubicación)
+            <ProcesoTableGeneral
+              title={`2.- Procesos por vencer en los próximos ${indicadores.VENTANA_DIAS_PRESENTACION_ALERTAS} días`}
+              subtitle="Procesos que requieren acción inmediata ya que están por vencer (tomar en cuenta ubicación)"
+              type="cpc"
+              lineas={100}
+              data={procesosVencer}
+              exportar={true}
+            />
           </Box>
 
           <Box mb={4}>
-            <ProcesoTableGeneral title={`3.- Procesos por vencer en los próximos ${indicadores.VENTANA_DIAS_PRESENTACION_ALERTAS} días en su ubicación de interés`} type="cpc" lineas={100} data={procesosVencerUbicacion}   exportar={true}  />
-            Procesos urgentes que vencen en los próximos 7 días y están dentro de tu zona geográfica de interés
+            <ProcesoTableGeneral
+              title={`3.- Procesos por vencer en los próximos ${indicadores.VENTANA_DIAS_PRESENTACION_ALERTAS} días en su ubicación de interés`}
+              subtitle="Procesos urgentes que vencen en los próximos 7 días y están dentro de tu zona geográfica de interés"
+              type="cpc"
+              lineas={100}
+              data={procesosVencerUbicacion}
+              exportar={true}
+            />
           </Box>
 
           <Box mb={4}>
-            <ProcesoTableGeneral title="4.- Procesos que cumplen al menos un CPC" type="cpc" lineas={100} data={procesosCPC} exportar={true} />
-            Procesos que coinciden con alguno de los códigos CPC marcados como relevantes para tu negocio
+            <ProcesoTableGeneral
+              title="4.- Procesos que cumplen al menos un CPC"
+              subtitle="Procesos que coinciden con alguno de los códigos CPC marcados como relevantes para tu negocio"
+              type="cpc"
+              lineas={100}
+              data={procesosCPC}
+              exportar={true}
+            />
           </Box>
           <Box mb={4}>
-            <ProcesoTableGeneral title="5.- Procesos que no cumplen CPC pero sí términos" type="terminos" lineas={100} data={procesosTermino}   exportar={true} />
-            Procesos que no tienen un CPC de tu interés, pero incluyen palabras clave relevantes que pueden convertirse en una oportunidad
+            <ProcesoTableGeneral
+              title="5.- Procesos que no cumplen CPC pero sí términos"
+              subtitle="Procesos que no tienen un CPC de tu interés, pero incluyen palabras clave relevantes que pueden convertirse en una oportunidad"
+              type="terminos"
+              lineas={100}
+              data={procesosTermino}
+              exportar={true}
+            />
           </Box>
 
 

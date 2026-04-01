@@ -105,6 +105,7 @@ export interface Proceso {
 
 export interface ProcesoTableProps {
   title: string;
+  subtitle?: string;
   type: 'cpc' | 'terminos' | 'seguimiento';
   lineas?: number;
    data: Proceso[]; 
