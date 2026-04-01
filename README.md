@@ -25,6 +25,38 @@ npm run build
 npm run dev
 ```
 
+## Instalacion desde repositorio (Mac y Windows)
+
+Los scripts estan en `FRONT_END/scripts/` y clonan el repo `QUANTIA_FRONTEND`, hacen `git pull`, instalan dependencias y compilan o ejecutan Vite.
+
+### Mac
+
+```plaintext
+./scripts/install_build_mac.sh
+./scripts/run_dev_mac.sh
+```
+
+Puedes pasar una carpeta destino:
+
+```plaintext
+./scripts/install_build_mac.sh /ruta/a/QUANTIA_FRONTEND
+./scripts/run_dev_mac.sh /ruta/a/QUANTIA_FRONTEND
+```
+
+### Windows
+
+```plaintext
+scripts\install_build_windows.bat
+scripts\run_dev_windows.bat
+```
+
+Con carpeta destino:
+
+```plaintext
+scripts\install_build_windows.bat C:\ruta\QUANTIA_FRONTEND
+scripts\run_dev_windows.bat C:\ruta\QUANTIA_FRONTEND
+```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
