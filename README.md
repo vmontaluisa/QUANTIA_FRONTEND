@@ -1,4 +1,4 @@
-## React + TypeScript + Vitecc
+## React + TypeScript + Viteccxx
 
 ## Inicio rapido (Front End)
 
