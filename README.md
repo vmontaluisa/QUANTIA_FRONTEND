@@ -1,4 +1,4 @@
-## React + TypeScript + Viteccxxee
+## React + TypeScript + Vite 2026
 
 ## Inicio rapido (Front End)
 
