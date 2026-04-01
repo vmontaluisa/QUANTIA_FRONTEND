@@ -1,6 +1,6 @@
-## React + TypeScript + Vite
+## React + TypeScript + Vitecc
 
-## Inicio rapido (Front End) 
+## Inicio rapido (Front End)
 
 Pasos basicos para levantar el proyecto en local:
 
@@ -13,8 +13,8 @@ npm run dev
 
 Notas:
 
-*   Variables de entorno: revisa `.env`. Si necesitas recrearlo, puedes copiarlo desde `archivo.env.txt`.
-*   La app suele quedar disponible en `http://localhost:5173` (Vite te mostrara la URL exacta en consola).
+- Variables de entorno: revisa `.env`. Si necesitas recrearlo, puedes copiarlo desde `archivo.env.txt`.
+- La app suele quedar disponible en `http://localhost:5173` (Vite te mostrara la URL exacta en consola).
 
 ## Desarrollo (compilar antes de ejecutar)
 
@@ -61,8 +61,8 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Currently, two official plugins are available:
 
-*   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-*   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## Expanding the ESLint configuration
 
@@ -109,6 +109,7 @@ export default tseslint.config({
   },
 })
 ```
+
 # Front-End (Vite)
 
 Este front usa Vite y variables de entorno con prefijo `VITE_`.
@@ -157,3 +158,4 @@ npm run preview:produccion
 
 - Para producción se usa `--mode produccion`, por lo que Vite carga `.env.produccion`.
 - Para desarrollo se usa `--mode development` y además se aplican los valores de `.env.local`.
+
