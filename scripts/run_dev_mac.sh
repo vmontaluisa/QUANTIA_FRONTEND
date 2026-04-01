@@ -12,8 +12,6 @@ cd "$TARGET_DIR"
 echo "Actualizando repo..."
 git pull
 
-echo "Instalando dependencias..."
-npm install  --legacy-peer-deps || echo "Fallo npm install. Continuando..."
 
 echo "Iniciando Vite..."
 npm run dev -- --host || echo "Fallo npm run dev."
