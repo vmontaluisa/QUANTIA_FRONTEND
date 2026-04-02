@@ -22,12 +22,10 @@ import { fetchListarUnaEmpresa } from '../services/empresaService';
 import { fetchListadoUbicaiones } from '../services/portalService';
 
 
-const EMPRESA_ID = 0;
-
-
-
 const Empresa = () => {
+  const [empresaId, setEmpresaId] = useState<number | null>(null);
   const [formData, setFormData] = useState({
+    id: 0,
     ruc: '',
     nombre: '',
     direccion: '',
@@ -58,6 +56,7 @@ const Empresa = () => {
   const cargarDatosEmpresa = async () => {
     const data = await fetchListarUnaEmpresa(1); // ID fijo o dinámico
     setFormData(data); // Asegúrate de que `setFormData` reciba el objeto `data`
+    setEmpresaId(data?.id ?? null);
     const cargarUbicaciones = async () => {
       const data = await fetchListadoUbicaiones();
       setUbicacionesDisponibles(data.map((item: any) => item.provincia_canton));
@@ -92,8 +91,12 @@ const Empresa = () => {
       if( !validacion) {
             setMensajeGrabado('NO SE ACTUALIZO: '+mensaje);
       }else{
-            const response = await fetchEditarEmpresa(EMPRESA_ID, formData);
-            setMensajeGrabado('Información actualizada correctamente');
+            if (!empresaId) {
+              setMensajeGrabado('NO SE ACTUALIZO: no se encontró el ID de la empresa.');
+            } else {
+              const response = await fetchEditarEmpresa(empresaId, formData);
+              setMensajeGrabado('Información actualizada correctamente');
+            }
       }
  
       setConfirmOpen(true);
